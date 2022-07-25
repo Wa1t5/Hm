@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Project
-project("Heroique" VERSION 0.0)
+project("Hm" VERSION 0.0)
 
 
 # Need to be built as a STATIC library
 # Project files
-add_library("Heroique" STATIC
+add_library("Hm" STATIC
             "${PROJECT_SOURCE_DIR}/Include/Entity.hpp"
             "${PROJECT_SOURCE_DIR}/Src/Framework/Entity.cpp"
             "${PROJECT_SOURCE_DIR}/Include/EntityManager.hpp"
@@ -17,6 +17,8 @@ add_library("Heroique" STATIC
             "${PROJECT_SOURCE_DIR}/Src/Framework/Input.cpp"
             "${PROJECT_SOURCE_DIR}/Include/Physics.hpp"
             "${PROJECT_SOURCE_DIR}/Src/Framework/Physics.cpp"
+            "${PROJECT_SOURCE_DIR}/Include/Polygons.hpp"
+            "${PROJECT_SOURCE_DIR}/Src/Framework/Polygons.cpp"
             "${PROJECT_SOURCE_DIR}/Include/Renderer.hpp"
             "${PROJECT_SOURCE_DIR}/Src/Framework/Renderer.cpp"
             "${PROJECT_SOURCE_DIR}/Include/ResourceLoader.hpp"

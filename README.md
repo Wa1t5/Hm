@@ -18,8 +18,8 @@ As stated before i wrote this project purely for gaining experience with c++ and
 
 ### How to build:
 The project already comes with SDL and SDL_image as submodules
+
 ```
-Goto project root
 mkdir build
 cd build
 cmake -G Ninja

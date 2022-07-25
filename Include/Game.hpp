@@ -18,6 +18,7 @@
 #include "ResourceLoader.hpp"
 #include "Scene.hpp"
 #include "SceneManager.hpp"
+#include "Polygons.hpp"
 
 // Framework physics stuff
 #include "Physics.hpp"

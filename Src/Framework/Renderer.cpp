@@ -10,6 +10,12 @@ void Renderer::Clear()
 {
     SDL_RenderClear(Renderer::_renderer);
 }
+
+void Renderer::SetRenderColor(int r, int g, int b, int a)
+{
+    SDL_SetRenderDrawColor(_renderer, r, g, b, a);
+}
+
 /*
 void Renderer::DrawSprite(Sprite* sprite, Vector2* pos)
 {
@@ -21,6 +27,7 @@ void Renderer::DrawSprite(Sprite* sprite, Vector2* pos)
     SDL_RenderCopy(Renderer::_renderer, sprite->_texture, NULL, tmpRect);
 }
 */
+
 void Renderer::ChangeBuffer()
 {
     SDL_RenderPresent(Renderer::_renderer);
