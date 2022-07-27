@@ -1,13 +1,16 @@
 #include "../../Include/Game.hpp"
 
-Entity* EntityManager::CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer)
+Entity* EntityManager::CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer, Input* input)
 {
     EntityManager::entities_c++;
     EntityManager::entities[EntityManager::entities_c] = entity;
     EntityManager::entities[EntityManager::entities_c]->id = entities_c;
     EntityManager::entities[EntityManager::entities_c]->renderer = renderer;
-    EntityManager::entities[EntityManager::entities_c]->pos->_x = pos->_x;
-    EntityManager::entities[EntityManager::entities_c]->pos->_y = pos->_y;
+    EntityManager::entities[EntityManager::entities_c]->input = input;
+    EntityManager::entities[EntityManager::entities_c]->pos = pos;
+
+    EntityManager::InitEntities();
+    EntityManager::LoadEntitiesResources();
 
     return EntityManager::entities[EntityManager::entities_c];
 }

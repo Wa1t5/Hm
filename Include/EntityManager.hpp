@@ -4,7 +4,7 @@
 class EntityManager
 {
 public:
-    Entity* CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer);
+    Entity* CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer, Input* input);
     void DestroyEntity(Entity* entity);
     void EntityExists(Entity* entity);
     void ReorganizeEntities();

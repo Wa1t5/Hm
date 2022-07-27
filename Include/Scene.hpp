@@ -4,8 +4,11 @@
 class Scene
 {
 public:
-    void Init();
-    void LoadResources();
-    void Update();
-    void Render();
+    Renderer* renderer = nullptr;
+    Input* input = nullptr;
+    
+    virtual void Init();
+    virtual void LoadResources();
+    virtual void Update();
+    virtual void Render();
 };

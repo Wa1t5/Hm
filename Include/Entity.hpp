@@ -14,4 +14,5 @@ public:
     Sprite* sprite = nullptr;
     Vector2* pos = nullptr;
     Renderer* renderer = nullptr;
+    Input* input = nullptr;
 };

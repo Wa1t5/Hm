@@ -1,8 +1,11 @@
 #include "../../Include/Game.hpp"
 
-void SceneManager::LoadScene(Scene* scene)
+void SceneManager::LoadScene(Scene* scene, Renderer* renderer, Input* input)
 {
     _scene = scene;
+    _scene->input = input;
+    _scene->renderer = renderer;
+    
     SceneManager::InitScene();
     SceneManager::LoadSceneResources();
 }
