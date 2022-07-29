@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <random>
 
 // Deps
 #include "../Deps/SDL/include/SDL.h"
