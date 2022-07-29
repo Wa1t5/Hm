@@ -8,6 +8,7 @@ Entity* EntityManager::CreateEntity(Entity* entity, Vector2* pos, Renderer* rend
     EntityManager::entities[EntityManager::entities_c]->renderer = renderer;
     EntityManager::entities[EntityManager::entities_c]->input = input;
     EntityManager::entities[EntityManager::entities_c]->pos = pos;
+    EntityManager::entities[EntityManager::entities_c]->size = new Vector2(0, 0);
 
     EntityManager::InitEntities();
     EntityManager::LoadEntitiesResources();
@@ -59,6 +60,38 @@ void EntityManager::DestroyEntity(Entity* entity)
     {
         EntityManager::entities[entity->id] = NULL;
         ReorganizeEntities();
+    }
+}
+
+void EntityManager::SetEntityPosition(Entity* entity, Vector2* pos)
+{
+    if (EntityManager::entities[entity->id] != NULL)
+    {
+        EntityManager::entities[entity->id]->pos = pos;
+    }
+}
+
+void EntityManager::SetEntitySize(Entity* entity, Vector2* size)
+{
+    if (EntityManager::entities[entity->id] != NULL)
+    {
+        EntityManager::entities[entity->id]->size = size;
+    }
+}
+
+Vector2* EntityManager::GetEntityPosition(Entity* entity)
+{
+    if (EntityManager::entities[entity->id] != NULL)
+    {
+        return EntityManager::entities[entity->id]->GetPosition();
+    }
+}
+
+Vector2* EntityManager::GetEntitySize(Entity* entity)
+{
+    if (EntityManager::entities[entity->id] != NULL)
+    {
+        return EntityManager::entities[entity->id]->GetSize();
     }
 }
 

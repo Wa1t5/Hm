@@ -32,6 +32,7 @@ public:
     void EventHadling();
     void Update();
     void Render();
+    void SetFPS(int fps); // TODO
     ~Game();
 //private:
     bool shouldQuit = false;

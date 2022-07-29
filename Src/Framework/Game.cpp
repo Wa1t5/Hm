@@ -24,24 +24,14 @@ void Game::EventHadling()
         {
             shouldQuit = true;
         }
-
-        // Handle released key
-        if (e.type == SDL_KEYUP)
-        {
-            mainInput->HandleKeyboard(e.key.keysym.scancode, 1);
-        }
-
-        // Handle pressed key
-        if (e.type == SDL_KEYDOWN)
-        {
-            mainInput->HandleKeyboard(e.key.keysym.scancode, 2);
-        }
     }
 }
 
 void Game::Update() {}
 
 void Game::Render() {}
+
+void Game::SetFPS(int fps) {} // TODO
 
 Game::~Game()
 {

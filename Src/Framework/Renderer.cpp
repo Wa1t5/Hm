@@ -3,7 +3,8 @@
 
 Renderer::Renderer(Window* window)
 {
-    _renderer = SDL_CreateRenderer(window->_window, 0, SDL_RENDERER_ACCELERATED);
+    // TODO: Need a function to cap fps instead of using vsync
+    _renderer = SDL_CreateRenderer(window->_window, 0, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 }
 
 void Renderer::Clear()

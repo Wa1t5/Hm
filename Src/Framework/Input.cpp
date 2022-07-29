@@ -1,9 +1,17 @@
 #include "../../Include/Game.hpp"
 
+
+bool Input::IsKeyDown(SDL_Scancode key)
+{
+    return SDL_GetKeyboardState(NULL)[key];
+}
+
+/*
 void Input::HandleKeyboard(SDL_Scancode key, int state)
 {
     Input::nextKey = key;
     Input::nextKeyState = state;
+
     UpdateKeyboardState();
 }
 
@@ -51,4 +59,4 @@ void Input::ResetKeyboardState()
 {
     //Input::curKey = NULL;
     Input::curKeyState = NULL;
-}
+}*/
