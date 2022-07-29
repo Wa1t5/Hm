@@ -5,8 +5,6 @@ class Entity
 {
 public:
     Entity();
-    Vector2* GetPosition();
-    Vector2* GetSize();
     virtual void Init();
     virtual void LoadResources();
     virtual void Update();

@@ -63,38 +63,6 @@ void EntityManager::DestroyEntity(Entity* entity)
     }
 }
 
-void EntityManager::SetEntityPosition(Entity* entity, Vector2* pos)
-{
-    if (EntityManager::entities[entity->id] != NULL)
-    {
-        EntityManager::entities[entity->id]->pos = pos;
-    }
-}
-
-void EntityManager::SetEntitySize(Entity* entity, Vector2* size)
-{
-    if (EntityManager::entities[entity->id] != NULL)
-    {
-        EntityManager::entities[entity->id]->size = size;
-    }
-}
-
-Vector2* EntityManager::GetEntityPosition(Entity* entity)
-{
-    if (EntityManager::entities[entity->id] != NULL)
-    {
-        return EntityManager::entities[entity->id]->GetPosition();
-    }
-}
-
-Vector2* EntityManager::GetEntitySize(Entity* entity)
-{
-    if (EntityManager::entities[entity->id] != NULL)
-    {
-        return EntityManager::entities[entity->id]->GetSize();
-    }
-}
-
 void EntityManager::ReorganizeEntities()
 {
     for (int i = 0; i < EntityManager::entities_c; i++)

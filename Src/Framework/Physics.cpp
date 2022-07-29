@@ -1,11 +1,11 @@
 #include "../../Include/Game.hpp"
 
-bool Physics::IsColliding(Entity *a, Entity *b)
+bool Physics::IsColliding(Entity* a, Entity* b)
 {
-    if (a->GetPosition()->_x < b->GetPosition()->_x + b->GetSize()->_x &&
-    a->GetPosition()->_x + a->GetSize()->_x > b->GetPosition()->_x &&
-    a->GetPosition()->_y < b->GetPosition()->_y + b->GetSize()->_y &&
-    a->GetPosition()->_y + a->GetSize()->_y > b->GetPosition()->_y) return true;
+    if (a->pos->_x < b->pos->_x + b->size->_x &&
+    a->pos->_x + a->size->_x > b->pos->_x &&
+    a->pos->_y < b->pos->_y + b->size->_y &&
+    a->pos->_y + a->size->_y > b->pos->_y) return true;
     
     return false;
 }

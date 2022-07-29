@@ -6,12 +6,6 @@ class EntityManager
 public:
     Entity* CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer, Input* input);
     void DestroyEntity(Entity* entity);
-
-    void SetEntityPosition(Entity* entity, Vector2* pos);
-    void SetEntitySize(Entity* entity, Vector2* size);
-    Vector2* GetEntityPosition(Entity* entity);
-    Vector2* GetEntitySize(Entity* entity);
-
     void EntityExists(Entity* entity);
     void ReorganizeEntities();
     void InitEntities();
