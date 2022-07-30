@@ -21,8 +21,8 @@ The project already comes with SDL and SDL_image as submodules
 
 ```
 mkdir build
+cmake -B ./build -G Ninja
 cd build
-cmake -G Ninja
 ninja
 ```
 
