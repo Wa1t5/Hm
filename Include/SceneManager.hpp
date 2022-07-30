@@ -4,7 +4,7 @@
 class SceneManager
 {
 public:
-    void LoadScene(Scene* scene, Renderer* renderer, Input* input);
+    void LoadScene(Scene* scene, Renderer* renderer, Window* window, Input* input);
     void InitScene();
     void LoadSceneResources();
     void UpdateScene();
