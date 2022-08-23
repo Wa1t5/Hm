@@ -3,10 +3,10 @@
 void Polygons::DrawCube(Renderer* renderer, Vector2* pos, Vector2* size, bool fill)
 {
     SDL_Rect* tmpRect = new SDL_Rect;
-    tmpRect->x = pos->_x;
-    tmpRect->y = pos->_y;
-    tmpRect->w = size->_x;
-    tmpRect->h = size->_y;
+    tmpRect->x = pos->x;
+    tmpRect->y = pos->y;
+    tmpRect->w = size->x;
+    tmpRect->h = size->y;
 
     if (!fill)
     {

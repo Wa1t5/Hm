@@ -13,8 +13,8 @@ void Sprite::Draw(Vector2* pos)
     SDL_Rect* tmpRect = new SDL_Rect;
     tmpRect->w = _rect->w;
     tmpRect->h = _rect->h;
-    tmpRect->x = pos->_x;
-    tmpRect->y = pos->_y;
+    tmpRect->x = pos->x;
+    tmpRect->y = pos->y;
     SDL_RenderCopy(_renderer->_renderer, _texture, NULL, tmpRect);
 }
 

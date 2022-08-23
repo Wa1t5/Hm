@@ -4,13 +4,26 @@
 class Renderer
 {
 public:
+    /* Renderer: Constructor
+        * window (Window*)
+    */
     Renderer(Window* window);
+
+    /* Renderer: Clear */
     void Clear();
+
+    /* Renderer: Set Render Color
+        * r: red (int)
+        * g: green (int)
+        * b: blue (int)
+        * a: alpha (int)
+    */
     void SetRenderColor(int r, int g, int b, int a);
-    //void DrawSprite(Sprite* sprite, Vector2* pos);
+
+    /* Renderer: Change Buffer */
     void ChangeBuffer();
 
-public:
+    /* Renderer: Info */
     SDL_Renderer* _renderer = nullptr;
     SDL_Window* _window = nullptr;
 };

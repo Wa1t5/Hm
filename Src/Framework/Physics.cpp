@@ -2,10 +2,10 @@
 
 bool Physics::IsColliding(Entity* a, Entity* b)
 {
-    if (a->pos->_x < b->pos->_x + b->size->_x &&
-    a->pos->_x + a->size->_x > b->pos->_x &&
-    a->pos->_y < b->pos->_y + b->size->_y &&
-    a->pos->_y + a->size->_y > b->pos->_y) return true;
+    if (a->pos->x < b->pos->x + b->size->x &&
+    a->pos->x + a->size->x > b->pos->x &&
+    a->pos->y < b->pos->y + b->size->y &&
+    a->pos->y + a->size->y > b->pos->y) return true;
     
     return false;
 }

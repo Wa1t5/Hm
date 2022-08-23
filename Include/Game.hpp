@@ -1,4 +1,6 @@
 #pragma once
+
+// Standard libraries
 #include <iostream>
 #include <random>
 
@@ -27,21 +29,39 @@
 class Game
 {
 public:
+    /* Game: Constructor
+        * title: window title (string)
+        * width: window width (int)
+        * height: window height (int)
+    */
     Game(std::string title, int width, int height);
+
+    /* Game: Init Event */
     void Init();
+
+    /* Game: Load Resources Event */
     void LoadResources();
+
+    /* Game: Event Handling Event */
     void EventHadling();
+
+    /* Game: Update Event */
     void Update();
+
+    /* Game: Render Event */
     void Render();
+
     void SetFPS(int fps); // TODO
+
+    /* Game: Destructor */
     ~Game();
-//private:
+
+    /* Game: Info */
     bool shouldQuit = false;
     enum GameStates {RUNNING, PAUSED};
     int GameState = RUNNING;
     Window* mainWindow = nullptr;
     Renderer* mainRenderer = nullptr;
-    //SDL_Surface* mainSurface = nullptr;
     Input* mainInput = nullptr;
     SDL_Event e;
 };

@@ -4,7 +4,10 @@
 class Vector2
 {
 public:
+    /* Vector2: Info */
+    void SetX(int _x);
+    void SetY(int _y);
     Vector2(int x, int y);
-    int _x = -1;
-    int _y = -1;
+    int x = -1;
+    int y = -1;
 };
