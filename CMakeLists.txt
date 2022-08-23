@@ -36,6 +36,9 @@ add_library("Hm" STATIC
             "${PROJECT_SOURCE_DIR}/Src/Framework/Window.cpp"
             )
 
+
+
+######################################### ONLY ENABLE THIS WHEN BUILDING SDL and SDL_IMAGE MANUALLY!!!  ####################################
 # SDL2: Disable install
 set(SDL2_DISABLE_INSTALL ON)
 
@@ -58,7 +61,7 @@ set(SDL2IMAGE_SAMPLES OFF)
 set(SDL2IMAGE_TESTS OFF)
 
 # SDL2: Add dir
-add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL")
+#add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL")
 
 # SDL2 Image: add dir
-add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL_image")
+#add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL_image")

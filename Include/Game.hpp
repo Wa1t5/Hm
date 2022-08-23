@@ -4,7 +4,7 @@
 
 // Deps
 #include "../Deps/SDL/include/SDL.h"
-#include "../Deps/SDL_image/SDL_image.h"
+#include "../Deps/SDL_image/include/SDL_image.h"
 
 // Framework math stuff
 #include "Vector2.hpp"
