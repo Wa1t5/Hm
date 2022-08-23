@@ -1,5 +1,15 @@
 #include "../../Include/Game.hpp"
 
+void Input::HandleMouse()
+{
+    mouseButton = SDL_GetMouseState(&mouseX, &mouseY);
+}
+
+bool Input::IsMouseButtonDown(Uint32 button)
+{
+    if (mouseButton == button) return true;
+    return false;
+}
 
 bool Input::IsKeyDown(SDL_Scancode key)
 {

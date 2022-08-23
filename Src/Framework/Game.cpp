@@ -24,6 +24,9 @@ void Game::EventHadling()
         {
             shouldQuit = true;
         }
+
+        // Handle mouse
+        mainInput->HandleMouse();
     }
 }
 
