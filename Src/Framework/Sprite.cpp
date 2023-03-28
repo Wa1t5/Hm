@@ -10,12 +10,12 @@ Sprite::Sprite(std::string path, Renderer* renderer)
 
 void Sprite::Draw(Vector2* pos)
 {
-    SDL_Rect* tmpRect = new SDL_Rect;
+    SDL_FRect* tmpRect = new SDL_FRect;
     tmpRect->w = _rect->w;
     tmpRect->h = _rect->h;
     tmpRect->x = pos->x;
     tmpRect->y = pos->y;
-    SDL_RenderCopy(_renderer->_renderer, _texture, NULL, tmpRect);
+    SDL_RenderTexture(_renderer->_renderer, _texture, NULL, tmpRect);
 }
 
 void Sprite::SetAlpha(float alpha)

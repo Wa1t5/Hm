@@ -35,6 +35,6 @@ public:
     int prevKeyState = NULL;
 
     Uint32 mouseButton = NULL;
-    int mouseX = NULL;
-    int mouseY = NULL;
+    float mouseX = NULL;
+    float mouseY = NULL;
 };

@@ -16,7 +16,7 @@ void Game::EventHadling()
     while (SDL_PollEvent(&e) != 0)
     {
         // Handle quit events
-        if (e.type == SDL_QUIT)
+        if (e.type == SDL_EVENT_QUIT)
         {
             shouldQuit = true;
         }

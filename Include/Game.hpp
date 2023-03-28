@@ -5,9 +5,9 @@
 #include <random>
 
 // Deps
-#include "../build/vcpkg_installed/x64-windows/include/SDL2/SDL.h"
-#include "../build/vcpkg_installed/x64-windows/include/SDL2/SDL_image.h"
-
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_render.h>
+#include <SDL3/SDL_image.h>
 
 // Framework math stuff
 #include "Vector2.hpp"

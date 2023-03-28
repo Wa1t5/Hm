@@ -2,7 +2,7 @@
 
 void Polygons::DrawCube(Renderer* renderer, Vector2* pos, Vector2* size, bool fill)
 {
-    SDL_Rect* tmpRect = new SDL_Rect;
+    SDL_FRect* tmpRect = new SDL_FRect;
     tmpRect->x = pos->x;
     tmpRect->y = pos->y;
     tmpRect->w = size->x;
@@ -10,7 +10,7 @@ void Polygons::DrawCube(Renderer* renderer, Vector2* pos, Vector2* size, bool fi
 
     if (!fill)
     {
-        SDL_RenderDrawRect(renderer->_renderer, tmpRect);
+        SDL_RenderRect(renderer->_renderer, tmpRect);
     }
     else
     {

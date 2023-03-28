@@ -7,17 +7,14 @@ project("Hm" VERSION 0.0)
 ######### Link libraries #########
 
 # SDL2
-find_package(SDL2 CONFIG REQUIRED)
-link_libraries(
-    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-)
+add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL")
+link_libraries("${PROJECT_SOURCE_DIR}/Build/Deps/SDL/SDL3.lib")
+include_directories("${PROJECT_SOURCE_DIR}/Deps/SDL/include")
 
 # SDL2_image
-find_package(SDL2_image CONFIG REQUIRED)
-link_libraries(
-    $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>
-)
+add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL_image")
+link_libraries("${PROJECT_SOURCE_DIR}/Build/Deps/SDL_image/SDL3_image.lib")
+include_directories("${PROJECT_SOURCE_DIR}/Deps/SDL_image/include")
 
 # Need to be built as a STATIC library
 # Project files
