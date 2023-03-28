@@ -1,2 +1,3 @@
-./.vscode
+# Ignore build dir
 ./Build
+/Build
