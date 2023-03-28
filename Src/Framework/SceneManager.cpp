@@ -1,4 +1,4 @@
-#include "../../Include/Game.hpp"
+#include <Hm/Game.hpp>
 
 void SceneManager::LoadScene(Scene* scene, Renderer* renderer, Window* window, Input* input)
 {

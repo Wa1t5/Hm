@@ -1,4 +1,5 @@
-#include "Game.hpp"
+#pragma once
+#include <Hm/Game.hpp>
 
 class Polygons
 {

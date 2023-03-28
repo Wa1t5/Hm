@@ -1,4 +1,4 @@
-#include "../../Include/Game.hpp"
+#include <Hm/Game.hpp>
 
 Sprite::Sprite(std::string path, Renderer* renderer)
 {

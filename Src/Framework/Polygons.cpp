@@ -1,4 +1,4 @@
-#include "../../Include/Game.hpp"
+#include <Hm/Game.hpp>
 
 void Polygons::DrawCube(Renderer* renderer, Vector2* pos, Vector2* size, bool fill)
 {

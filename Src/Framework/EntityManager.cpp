@@ -1,4 +1,4 @@
-#include "../../Include/Game.hpp"
+#include <Hm/Game.hpp>
 
 Entity* EntityManager::CreateEntity(Entity* entity, Vector2* pos, Renderer* renderer, Input* input)
 {

@@ -10,19 +10,19 @@
 #include <SDL3/SDL_image.h>
 
 // Framework math stuff
-#include "Vector2.hpp"
+#include <Hm/Vector2.hpp>
 
 // Framework stuff
-#include "Window.hpp"
-#include "Renderer.hpp"
-#include "Sprite.hpp"
-#include "Input.hpp"
-#include "Entity.hpp"
-#include "EntityManager.hpp"
-#include "ResourceLoader.hpp"
-#include "Scene.hpp"
-#include "SceneManager.hpp"
-#include "Polygons.hpp"
+#include <Hm/Window.hpp>
+#include <Hm/Renderer.hpp>
+#include <Hm/Sprite.hpp>
+#include <Hm/Input.hpp>
+#include <Hm/Entity.hpp>
+#include <Hm/EntityManager.hpp>
+#include <Hm/ResourceLoader.hpp>
+#include <Hm/Scene.hpp>
+#include <Hm/SceneManager.hpp>
+#include <Hm/Polygons.hpp>
 
 // Framework physics stuff
 #include "Physics.hpp"

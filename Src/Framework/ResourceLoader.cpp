@@ -1,4 +1,4 @@
-#include "../../Include/Game.hpp"
+#include <Hm/Game.hpp>
 
 SDL_Texture* ResourceLoader::LoadSprite(std::string path, Renderer* renderer)
 {

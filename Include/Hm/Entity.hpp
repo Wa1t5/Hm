@@ -1,5 +1,5 @@
 #pragma once
-#include "Game.hpp"
+#include <Hm/Game.hpp>
 
 class Entity
 {
