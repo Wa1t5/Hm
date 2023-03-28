@@ -4,6 +4,20 @@ set(CMAKE_CXX_STANDARD 23)
 # Project
 project("Hm" VERSION 0.0)
 
+######### Link libraries #########
+
+# SDL2
+find_package(SDL2 CONFIG REQUIRED)
+link_libraries(
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+
+# SDL2_image
+find_package(SDL2_image CONFIG REQUIRED)
+link_libraries(
+    $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>
+)
 
 # Need to be built as a STATIC library
 # Project files
@@ -36,32 +50,11 @@ add_library("Hm" STATIC
             "${PROJECT_SOURCE_DIR}/Src/Framework/Window.cpp"
             )
 
+######################## Testing
 
+# Hm | Link the framework to the testing project
+link_libraries("${PROJECT_SOURCE_DIR}/build/Hm.lib")
+include_directories("${PROJECT_SOURCE_DIR}/Include/Game.hpp")
 
-######################################### ONLY ENABLE THIS WHEN BUILDING SDL and SDL_IMAGE MANUALLY!!!  ####################################
-# SDL2: Disable install
-set(SDL2_DISABLE_INSTALL ON)
-
-# SDL2: Build shared
-set(SDL_STATIC OFF)
-set(SDL_SHARED ON)
-set(BUILD_SHARED_LIBS ON)
-
-# SDL2: Linux options
-set(SDL_WAYLAND ON)
-
-# SDL2 Image: Disable install
-set(SDL2IMAGE_INSTALL OFF)
-
-# SDL2 Image: Build shared
-set(SDL2IMAGE_DEPS_SHARED ON)
-
-# SDL2 Image: disable samples and tests
-set(SDL2IMAGE_SAMPLES OFF)
-set(SDL2IMAGE_TESTS OFF)
-
-# SDL2: Add dir
-#add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL")
-
-# SDL2 Image: add dir
-#add_subdirectory("${PROJECT_SOURCE_DIR}/Deps/SDL_image")
+project("Testing")
+add_executable("Testing" Testing/main.cpp)
