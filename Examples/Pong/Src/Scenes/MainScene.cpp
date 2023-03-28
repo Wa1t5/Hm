@@ -10,32 +10,43 @@
 class MainScene : public Scene
 {
 public:
+    // Store entities
     Player1* player1 = nullptr;
     Player2* player2 = nullptr;
     Ball* ball = nullptr;
+
+    // Store points
     int player1_points = 0;
     int player2_points = 0;
     std::string points = "";
 
+    /// Store entity manager
     EntityManager* entityManager = nullptr;
     float alpha = 1;
 
     void Init() override 
     {
+        // Set window title to the number of points
         points = "Player1: " + std::to_string(player1_points) + " Player 2: " + std::to_string(player2_points);
         window->SetWindowTitle(points);
 
+        // Randomize RNG
         srand(SDL_GetTicks());
+
+        // Init EntityManager
         entityManager = new EntityManager();
         
+        // Init entities
         player1 = new Player1();
         player2 = new Player2();
         ball = new Ball();
 
+        // Create entities on the scene
         entityManager->CreateEntity(player1, new Vector2(0.0, 0.0), renderer, input);
         entityManager->CreateEntity(player2, new Vector2(0.0, 0.0), renderer, input);
         entityManager->CreateEntity(ball, new Vector2(0.0, 0.0), renderer, input);
 
+        // Run entities init event and load resources event
         entityManager->InitEntities();
         entityManager->LoadEntitiesResources();
     }
@@ -46,6 +57,7 @@ public:
 
     void Update() override
     {
+        // Run entities update event
         entityManager->UpdateEntities();
 
         // Points

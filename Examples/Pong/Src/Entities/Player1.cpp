@@ -4,6 +4,7 @@ class Player1 : public Entity
 {
 public:
     int spd = 0;
+    int y_axis = 0;
 
     void Init() override
     {
@@ -19,16 +20,18 @@ public:
 
     void Update() override
     {
-        if (input->IsKeyDown(SDL_SCANCODE_W)) pos->y -= spd;
-        if (input->IsKeyDown(SDL_SCANCODE_S)) pos->y += spd;
+        // Move
+        y_axis = input->IsKeyDown(SDL_SCANCODE_S) - input->IsKeyDown(SDL_SCANCODE_W);
+        pos->y += y_axis * spd;
 
-        // Limit
-        //if (pos->y <= 0) pos->y += spd;
-        //if (pos->y >= 600 - size->y) pos->y -= spd;
+        // Clamp
+        if (pos->y <= 0) pos->y += spd;
+        if (pos->y >= 600 - size->y) pos->y -= spd;
     }
     
     void Render() override
     {
+        // Draw player 1
         Polygons::DrawCube(renderer, pos, size, 0);
     }
 };

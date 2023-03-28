@@ -3,9 +3,9 @@
 // Scenes
 #include "Scenes/MainScene.cpp"
 
+// Vars
 Game* game = nullptr;
 SceneManager* sceneManager = nullptr;
-
 MainScene* mainScene = nullptr;
 
 class Pong : public Game
@@ -13,10 +13,11 @@ class Pong : public Game
 public:
     static void Init()
     {
+        // Init scene manager
         sceneManager = new SceneManager();
 
+        // Init and load MainScene
         mainScene = new MainScene;
-
         sceneManager->LoadScene(mainScene, game->mainRenderer, game->mainWindow, game->mainInput);
     }
 

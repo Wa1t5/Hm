@@ -3,9 +3,8 @@
 class Player2 : public Entity
 {
 public:
-    //Vector2* pos = nullptr;
-    //Vector2* size = nullptr;
     int spd = 0;
+    int y_axis = 0;
 
     void Init() override
     {
@@ -20,17 +19,19 @@ public:
     }
 
     void Update() override
-    {
-        if (input->IsKeyDown(SDL_SCANCODE_UP)) pos->y -= spd;
-        if (input->IsKeyDown(SDL_SCANCODE_DOWN)) pos->y += spd;
+    {  
+        // Move
+        y_axis = input->IsKeyDown(SDL_SCANCODE_S) - input->IsKeyDown(SDL_SCANCODE_W);
+        pos->y += y_axis * spd;
 
-        // Limit
+        // Clamp
         if (pos->y <= 0) pos->y += spd;
         if (pos->y >= 600 - size->y) pos->y -= spd;
     }
     
     void Render() override
     {
+        // Draw player 2
         Polygons::DrawCube(renderer, pos, size, 0);
     }
 };
